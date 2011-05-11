@@ -68,7 +68,7 @@
         }
         
         if (error) {
-          el.addClass('unhappy').before(errorEl);
+          el.addClass('unhappy').first().before(errorEl);
           return false;
         } else {
           temp = errorEl.get(0);
@@ -80,7 +80,7 @@
           return true;
         }
       };
-      field.bind(config.when || 'blur', field.testValid);
+      field.bind(opts.when || config.when || 'blur', field.testValid);
     }
     
     for (item in config.fields) {
