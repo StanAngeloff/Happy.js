@@ -64,7 +64,7 @@
         if (submit === true && required === true && val.length === 0) {
           error = true;
         } else if (gotFunc) {
-          error = !opts.test(val, arg);
+          error = !opts.test(val, arg, submit);
         }
         
         if (error) {
