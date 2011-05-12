@@ -9,14 +9,14 @@
       return $('<span id="'+error.id+'" class="unhappyMessage">'+error.message+'</span>');
     }
     function handleSubmit() {
-      var errors = false, i, l;
+      var errors = [], i, l;
       for (i = 0, l = fields.length; i < l; i += 1) {
         if (!fields[i].testValid(true)) {
-          errors = true;
+          errors.push(fields[i]);
         }
       }
-      if (errors) {
-        if (isFunction(config.unHappy)) config.unHappy();
+      f (errors.length) {
+        if (isFunction(config.unHappy)) config.unHappy(errors);
         return false;
       } else if (config.testMode) {
         if (window.console) console.warn('would have submitted');
