@@ -15,7 +15,7 @@
           errors.push(fields[i]);
         }
       }
-      f (errors.length) {
+      if (errors.length) {
         if (isFunction(config.unHappy)) config.unHappy(errors);
         return false;
       } else if (config.testMode) {
